@@ -8,4 +8,10 @@ app1.controller('cltr1', function TodoController($scope){
     {name:'Learning React', completed:true},
     {name:'Integrating Angular with Express and Node', completed:false}
   ];
+
+  $scope.flipAllCompleted = function(list){
+    return list.map(function(el){
+      el.completed = !el.completed;
+    });
+  };
 });
