@@ -15,3 +15,14 @@ app2.controller('ChildController', function($scope){
 app2.controller('GrandChildController', function($scope){
   $scope.name = 'Dog';
 });
+
+app2.controller('ClousureController', function($scope){
+  $scope.adjFn = function(adj){
+    return function(name){
+      console.log('hi');
+      return `${adj} ${name}`;
+    };
+  };
+
+  $scope.badFn = $scope.adjFn('bad');
+});
